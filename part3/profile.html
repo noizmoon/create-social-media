@@ -1,0 +1,114 @@
+{% extends "sns/base.html" %}
+{% load static %}
+
+{% block contents %}
+<div class="col-xxl-6 col-md-7 mb-lg-0 mb-4">
+    <!-- プロフィール -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row text-center px-3 mx-1">
+                <div class="col-6">
+                    <a href="#!">
+                        <img class="avatar avatar-xl" src="{{ myuser.image.url }}" alt="">
+                    </a>
+                    <h5 class="mt-2 mb-0">{{ myuser.nickname }}</h5>
+                    <small>@{{ myuser.username }}</small>
+                    <form action="{% url 'sns:follow' myuser.id %}" method="POST" enctype="multipart/form-data"  class="mt-3">
+                        {% csrf_token %}
+                        {% if myuser in follow_list %}
+                        <button class="btn btn-sm btn-outline-danger rounded-pill shadow-none my-auto px-3" type="submit">UnFollow</button>
+                        {% else %}
+                        <button class="btn btn-sm btn-outline-primary rounded-pill shadow-none my-auto px-3" type="submit">Follow</button>
+                        {% endif %}
+                    </form>
+                </div>
+                <div class="col-6">
+
+                    <p class="mt-3">{{ myuser.introduction }}</p>
+
+                    <div class="hstack gap-2 gap-xl-3 justify-content-center">
+                        <div>
+                            <h6 class="mb-0">{{ tweet_count }}</h6>
+                            <small>Post</small>
+                        </div>
+                        <div class="vr"></div>
+                        <div>
+                            <h6 class="mb-0">{{ follow_count }}</h6>
+                            <small>Follow</small>
+                        </div>
+                        <div class="vr"></div>
+                        <div>
+                            <h6 class="mb-0">{{ follower_count }}</h6>
+                            <small>Follower</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ツイート一覧 -->
+    <div class="card mb-4">
+        <!-- for文で一つずつ表示させる。 -->
+        {% for tweet in tweet_list %}
+        <div class="card-header pb-0">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <!-- プロフアイコン -->
+                    <div class="me-3">
+                        <!-- classにlazyloadを追加  srcをdata-srcに変更 -->
+                        {% if tweet.myuser.image %}
+                        <img alt="" class="avatar avatar-md lazyload" data-src="{{ tweet.myuser.image.url }}">
+                        {% else %}
+                        <img alt="" class="avatar avatar-md lazyload" data-src="{% static 'assets/img/default-user.png' %}">
+                        {% endif %}
+                    </div>
+                    <!-- ユーザー情報 -->
+                    <div>
+                        <div class="nav nav-divider">
+                            <h6 class="nav-item card-title mb-0"> <a href="#!"> {{ tweet.myuser.nickname }} <span class="ms-2 text-secondary">@{{ tweet.myuser.username }}</span> </a></h6>
+                        </div>
+                        <p class="mb-0 small">{{ tweet.created_at }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 投稿 -->
+        <div class="card-body pb-0">
+            <!-- 投稿内容 -->
+            <p>{{ tweet.text }}</p>
+            <!-- 投稿画像 -->
+            <!-- classにlazyloadを追加  srcをdata-srcに変更  画像があれば表示 -->
+            {% if tweet.tweet_image %}
+            <img class="lazyload card-img" data-src="{{ tweet.tweet_image.url }}" alt="">
+            {% endif %}
+            <!-- アクション -->
+            <ul class="nav nav-stack py-1">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fa-regular fa-comment fa-md fa-fw me-2"></i>56</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fa-solid fa-retweet fa-md fa-fw me-2"></i>12</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fa-solid fa-heart fa-md fa-fw me-2"></i>32</a>
+                </li>
+                <!-- シェアアクション -->
+                <li class="nav-item dropdown ms-sm-auto">
+                    <a class="nav-link mb-0" href="#" id="cardShareAction" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-arrow-up-from-bracket fa-md fa-fw"></i>
+                    </a>
+                    <!-- Card share action dropdown menu -->
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cardShareAction">
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-envelope fa-fw pe-2"></i>メッセージ</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-bookmark-check fa-fw pe-2"></i>ブックマーク</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-link fa-fw pe-2"></i>コピーリンク</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-share fa-fw pe-2"></i>シェア</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr class="horizontal dark">
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
