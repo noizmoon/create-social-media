@@ -116,8 +116,118 @@
         </div>
         </nav>
         <!-- End Navbar -->
-        {% block contents %}
-        {% endblock %}
+        <div class="container-fluid py-4">
+            <div class="row justify-content-md-center mt-4">
+                <!-- メインコンテンツ -->
+                {% block contents %}
+                {% endblock %}
+                <!-- サイド -->
+                <div class="col-md-3">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" placeholder="Type here...">
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>Trend for you</h6>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm"># お宝</h6>
+                                        <span class="text-xs">250 Tweets</span>
+                                    </div>
+                                </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm"># ってばよ</h6>
+                                        <span class="text-xs">123 Tweets</span>
+                                    </div>
+                                </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm"># ターゲット</h6>
+                                        <span class="text-xs">1 Tweets</span>
+                                    </div>
+                                </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm"># 平和</h6>
+                                        <span class="text-xs">430 Tweets</span>
+                                    </div>
+                                </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>You should follow</h6>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{% static 'assets/img/team-1.jpg' %}" alt="" class="avatar avatar-sm me-3">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-xs mb-1 text-dark">ふじこ</h6>
+                                            <span class="text-xs">@fujifuji</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-self-end">
+                                        <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{% static 'assets/img/team-2.jpg' %}" alt="" class="avatar avatar-sm me-3">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-xs mb-1 text-dark">ゴルゴ</h6>
+                                            <span class="text-xs">@gorugoru</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-self-end">
+                                        <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{% static 'assets/img/team-3.jpg' %}" alt="" class="avatar avatar-sm me-3">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-xs mb-1 text-dark">のび太</h6>
+                                            <span class="text-xs">@nobita</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-self-end">
+                                        <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{% static 'assets/img/team-4.jpg' %}" alt="" class="avatar avatar-sm me-3">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="text-xs mb-1 text-dark">孫悟空</h6>
+                                            <span class="text-xs">@goku</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-self-end">
+                                        <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!--   Core JS Files   -->
     <script src="{% static 'assets/js/core/popper.min.js' %}"></script>

@@ -2,212 +2,102 @@
 {% load static %}
 
 {% block contents %}
-<div class="container-fluid py-4">
-    <div class="row justify-content-md-center mt-4">
-        <!-- メインコンテンツ -->
-        <div class="col-xxl-6 col-xl-7 col-md-7 mb-lg-0 mb-4">
-            <!-- ツイートする -->
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="d-flex align-items-top">
-                        <div class="me-3">
-                            <img class="avatar avatar-md" src="{% static 'assets/img/team-1.jpg' %}" alt="">
+<div class="col-xxl-6 col-md-7 mb-lg-0 mb-4">
+    <!-- ツイートする -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex align-items-top">
+                <div class="me-3">
+                    <img class="avatar avatar-md" src="{% static 'assets/img/team-1.jpg' %}" alt="">
+                </div>
+                <div class="w-100">
+                    <textarea class="form-control" rows="2"></textarea>
+                    <div class="d-flex align-items-center justify-content-between mt-3">
+                        <div>
+                            <i class="fa-regular fa-image fa-xl fa-fw"></i>
+                            <i class="fa-regular fa-face-smile fa-xl fa-fw"></i>
+                            <i class="fa-regular fa-clock fa-xl fa-fw"></i>
                         </div>
-                        <div class="w-100">
-                            <textarea class="form-control" rows="2"></textarea>
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div>
-                                    <i class="fa-regular fa-image fa-xl fa-fw"></i>
-                                    <i class="fa-regular fa-face-smile fa-xl fa-fw"></i>
-                                    <i class="fa-regular fa-clock fa-xl fa-fw"></i>
-                                </div>
-                                <div>
-                                    <a href="" class="btn btn-sm btn-primary shadow-none m-0">ツイート</a>
-                                </div>
-                            </div>
+                        <div>
+                            <a href="" class="btn btn-sm btn-primary shadow-none m-0">ツイート</a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- ツイート一覧 -->
-            <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <!-- プロフアイコン -->
-                            <div class="me-3">
-                                <img src="{% static 'assets/img/team-1.jpg' %}" alt="" class="avatar avatar-md">
-                            </div>
-                            <!-- ユーザー情報 -->
-                            <div>
-                                <div class="nav nav-divider">
-                                    <h6 class="nav-item card-title mb-0"> <a href="#!"> ふじこ <span class="ms-2 text-secondary">@fujifuji</span> </a></h6>
-                                </div>
-                                <p class="mb-0 small">5hr ago</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 投稿 -->
-                <div class="card-body py-3">
-                    <!-- 投稿内容 -->
-                    <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
-                    <!-- 投稿画像 -->
-                    <img class="card-img" src="{% static 'assets/img/bg-profile.jpg' %}" alt="Post">
-                    <!-- アクション -->
-                    <ul class="nav nav-stack py-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!"><i class="fa-regular fa-comment fa-md fa-fw me-2"></i>56</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!"><i class="fa-solid fa-retweet fa-md fa-fw me-2"></i>12</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!"><i class="fa-solid fa-heart fa-md fa-fw me-2"></i>32</a>
-                        </li>
-                        <!-- シェアアクション -->
-                        <li class="nav-item dropdown ms-sm-auto">
-                            <a class="nav-link mb-0" href="#" id="cardShareAction" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-arrow-up-from-bracket fa-md fa-fw"></i>
-                            </a>
-                            <!-- Card share action dropdown menu -->
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cardShareAction">
-                                <li><a class="dropdown-item" href="#"> <i class="bi bi-envelope fa-fw pe-2"></i>メッセージ</a></li>
-                                <li><a class="dropdown-item" href="#"> <i class="bi bi-bookmark-check fa-fw pe-2"></i>ブックマーク</a></li>
-                                <li><a class="dropdown-item" href="#"> <i class="bi bi-link fa-fw pe-2"></i>コピーリンク</a></li>
-                                <li><a class="dropdown-item" href="#"> <i class="bi bi-share fa-fw pe-2"></i>シェア</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- コメント入力 -->
-                    <ul class="list-unstyled">
-                        <li class="d-flex position-relative">
-                            <a href="#!"> <img class="avatar avatar-sm" src="{% static 'assets/img/team-1.jpg' %}" alt=""> </a>
-                            <form class="ms-3 w-100">
-                                <textarea data-autoresize="" class="form-control pe-4" rows="1" placeholder="Add a comment..."></textarea>
-                            </form>
-                        </li>
-                    </ul>
-                    <!-- コメントリスト -->
-                    <ul class="list-unstyled">
-                        <li class="d-flex position-relative">
-                            <a href="#!"> <img class="avatar avatar-sm" src="{% static 'assets/img/team-1.jpg' %}" alt=""> </a>
-                            <div class="ms-3">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-1"> <a href="#!"> Frances Guerrero </a></h6>
-                                    <small class="ms-2">5hr</small>
-                                </div>
-                                <p class="small mb-0">Removed demands expense account in outward tedious do. Particular way thoroughly unaffected projection.</p>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-        <!-- サイド -->
-        <div class="col-md-3">
-            <div class="input-group mb-4">
-                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" placeholder="Type here...">
-            </div>
-            <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>Trend for you</h6>
+    </div>
+    <!-- ツイート一覧 -->
+    <div class="card mb-4">
+        <div class="card-header pb-0">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <!-- プロフアイコン -->
+                    <div class="me-3">
+                        <img src="{% static 'assets/img/team-1.jpg' %}" alt="" class="avatar avatar-md">
+                    </div>
+                    <!-- ユーザー情報 -->
+                    <div>
+                        <div class="nav nav-divider">
+                            <h6 class="nav-item card-title mb-0"> <a href="#!"> ふじこ <span class="ms-2 text-secondary">@fujifuji</span> </a></h6>
+                        </div>
+                        <p class="mb-0 small">5hr ago</p>
+                    </div>
                 </div>
-                <div class="card-body pt-0">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                        <div class="d-flex align-items-center">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark text-sm"># お宝</h6>
-                                <span class="text-xs">250 Tweets</span>
-                            </div>
-                        </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                        <div class="d-flex align-items-center">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark text-sm"># ってばよ</h6>
-                                <span class="text-xs">123 Tweets</span>
-                            </div>
-                        </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                        <div class="d-flex align-items-center">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark text-sm"># ターゲット</h6>
-                                <span class="text-xs">1 Tweets</span>
-                            </div>
-                        </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                        <div class="d-flex align-items-center">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark text-sm"># 平和</h6>
-                                <span class="text-xs">430 Tweets</span>
-                            </div>
-                        </div>
-                        </li>
+            </div>
+        </div>
+        <!-- 投稿 -->
+        <div class="card-body py-3">
+            <!-- 投稿内容 -->
+            <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
+            <!-- 投稿画像 -->
+            <img class="card-img" src="{% static 'assets/img/bg-profile.jpg' %}" alt="Post">
+            <!-- アクション -->
+            <ul class="nav nav-stack py-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fa-regular fa-comment fa-md fa-fw me-2"></i>56</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fa-solid fa-retweet fa-md fa-fw me-2"></i>12</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fa-solid fa-heart fa-md fa-fw me-2"></i>32</a>
+                </li>
+                <!-- シェアアクション -->
+                <li class="nav-item dropdown ms-sm-auto">
+                    <a class="nav-link mb-0" href="#" id="cardShareAction" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-arrow-up-from-bracket fa-md fa-fw"></i>
+                    </a>
+                    <!-- Card share action dropdown menu -->
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cardShareAction">
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-envelope fa-fw pe-2"></i>メッセージ</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-bookmark-check fa-fw pe-2"></i>ブックマーク</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-link fa-fw pe-2"></i>コピーリンク</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="bi bi-share fa-fw pe-2"></i>シェア</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>You should follow</h6>
-                </div>
-                <div class="card-body pt-0">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
-                            <div class="d-flex align-items-center">
-                                <img src="{% static 'assets/img/team-1.jpg' %}" alt="" class="avatar avatar-sm me-3">
-                                <div class="d-flex flex-column">
-                                    <h6 class="text-xs mb-1 text-dark">ふじこ</h6>
-                                    <span class="text-xs">@fujifuji</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-self-end">
-                                <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
-                            <div class="d-flex align-items-center">
-                                <img src="{% static 'assets/img/team-2.jpg' %}" alt="" class="avatar avatar-sm me-3">
-                                <div class="d-flex flex-column">
-                                    <h6 class="text-xs mb-1 text-dark">ゴルゴ</h6>
-                                    <span class="text-xs">@gorugoru</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-self-end">
-                                <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
-                            <div class="d-flex align-items-center">
-                                <img src="{% static 'assets/img/team-3.jpg' %}" alt="" class="avatar avatar-sm me-3">
-                                <div class="d-flex flex-column">
-                                    <h6 class="text-xs mb-1 text-dark">のび太</h6>
-                                    <span class="text-xs">@nobita</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-self-end">
-                                <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between px-0 border-radius-lg">
-                            <div class="d-flex align-items-center">
-                                <img src="{% static 'assets/img/team-4.jpg' %}" alt="" class="avatar avatar-sm me-3">
-                                <div class="d-flex flex-column">
-                                    <h6 class="text-xs mb-1 text-dark">孫悟空</h6>
-                                    <span class="text-xs">@goku</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-self-end">
-                                <button class="btn btn-sm btn-outline-dark rounded-pill shadow-none my-auto px-3">Follow</button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                </li>
+            </ul>
+            <!-- コメント入力 -->
+            <ul class="list-unstyled">
+                <li class="d-flex position-relative">
+                    <a href="#!"> <img class="avatar avatar-sm" src="{% static 'assets/img/team-1.jpg' %}" alt=""> </a>
+                    <form class="ms-3 w-100">
+                        <textarea data-autoresize="" class="form-control pe-4" rows="1" placeholder="Add a comment..."></textarea>
+                    </form>
+                </li>
+            </ul>
+            <!-- コメントリスト -->
+            <ul class="list-unstyled">
+                <li class="d-flex position-relative">
+                    <a href="#!"> <img class="avatar avatar-sm" src="{% static 'assets/img/team-1.jpg' %}" alt=""> </a>
+                    <div class="ms-3">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-1"> <a href="#!"> Frances Guerrero </a></h6>
+                            <small class="ms-2">5hr</small>
+                        </div>
+                        <p class="small mb-0">Removed demands expense account in outward tedious do. Particular way thoroughly unaffected projection.</p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
