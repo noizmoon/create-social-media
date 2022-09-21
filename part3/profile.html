@@ -8,9 +8,11 @@
         <div class="card-body">
             <div class="row text-center px-3 mx-1">
                 <div class="col-6">
-                    <a href="#!">
-                        <img class="avatar avatar-xl" src="{{ myuser.image.url }}" alt="">
-                    </a>
+                    {% if myuser.image %}
+                    <img alt="" class="avatar avatar-xl" src="{{ myuser.image.url }}">
+                    {% else %}
+                    <img alt="" class="avatar avatar-xl" src="{% static 'assets/img/default-user.png' %}">
+                    {% endif %}
                     <h5 class="mt-2 mb-0">{{ myuser.nickname }}</h5>
                     <small>@{{ myuser.username }}</small>
                     <form action="{% url 'sns:follow' myuser.id %}" method="POST" enctype="multipart/form-data"  class="mt-3">
@@ -23,9 +25,7 @@
                     </form>
                 </div>
                 <div class="col-6">
-
                     <p class="mt-3">{{ myuser.introduction }}</p>
-
                     <div class="hstack gap-2 gap-xl-3 justify-content-center">
                         <div>
                             <h6 class="mb-0">{{ tweet_count }}</h6>
